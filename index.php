@@ -1,3 +1,11 @@
 <?php
+require "database/database.php";
 
-require "index.view.php";
+
+$sql = "SELECT * FROM `products_list`";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    $productList = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+require "views/index.view.php";
