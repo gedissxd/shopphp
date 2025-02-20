@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +25,7 @@
                     <?= $product['description'] ?>
                 </p>
                 <form action="cart.php" method="post">
+                    <input type="hidden" name="quantity" value="1">
                     <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                     <button class="mt-8 bg-sky-500 p-4 rounded-full" type="submit">
                         Add to cart
